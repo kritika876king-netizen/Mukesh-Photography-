@@ -1,1 +1,420 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08070c">
+<title>Mukesh Photography | Luxury Wedding & Cinematic Studio</title>
+<meta name="description" content="Mukesh Photography - Luxury Wedding, Pre-Wedding, Drone and Cinematic Photography across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--black:#08070c;
+--gold:#d6b477;
+--purple:#b9a1d6;
+--white:#f7f2ec;
+--muted:#a8a1aa;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+background:var(--black);color:var(--white);
+font-family:'Manrope',sans-serif;overflow-x:hidden
+}
+a{color:inherit;text-decoration:none}
+img{width:100%;display:block;object-fit:cover}
+button,input,textarea,select{font:inherit}
+::selection{background:var(--gold);color:#08070c}
+.cursor-glow{
+position:fixed;width:300px;height:300px;border-radius:50%;
+background:rgba(185,161,214,.07);filter:blur(65px);
+pointer-events:none;z-index:-1;top:20%;left:60%
+}
+header{
+height:82px;padding:0 7%;display:flex;align-items:center;
+justify-content:space-between;position:fixed;top:0;width:100%;
+z-index:100;background:rgba(8,7,12,.78);
+backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12
+}
+.logo{font-family:'Cormorant Garamond',serif;font-size:27px;
+letter-spacing:2px;color:var(--gold);font-weight:700}
+.logo span{display:block;font:8px Manrope;letter-spacing:5px;
+color:var(--white);text-align:center;margin-top:-2px}
+nav{display:flex;gap:30px;align-items:center}
+nav a{font-size:11px;letter-spacing:1.5px;color:#ddd;
+transition:.3s}
+nav a:hover{color:var(--gold)}
+.nav-btn,.gold-btn{
+border:1px solid var(--gold);padding:13px 22px;
+color:var(--gold);font-size:10px;letter-spacing:2px;
+display:inline-block;transition:.4s;background:transparent
+}
+.nav-btn:hover,.gold-btn:hover{
+background:var(--gold);color:#08070c;transform:translateY(-3px)
+}
+.menu{display:none;background:none;border:0;color:white;font-size:26px}
+.hero{
+min-height:100vh;position:relative;display:flex;align-items:center;
+padding:130px 10% 80px;overflow:hidden
+}
+.hero-bg{
+position:absolute;inset:0;background:
+linear-gradient(90deg,rgba(8,7,12,.94),rgba(8,7,12,.45),rgba(8,7,12,.2)),
+linear-gradient(0deg,var(--black),transparent 35%),
+url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=90') center/cover;
+animation:heroZoom 15s ease-in-out infinite alternate
+}
+@keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.09)}}
+.hero-content{position:relative;max-width:750px;z-index:2}
+.eyebrow{font-size:10px;letter-spacing:5px;color:var(--gold);
+margin-bottom:25px;text-transform:uppercase}
+.hero h1{
+font:500 clamp(58px,9vw,115px)/.92 'Cormorant Garamond',serif;
+letter-spacing:-2px;margin-bottom:30px
+}
+.hero h1 em{color:var(--gold);font-weight:400}
+.hero p{max-width:490px;color:#ddd;line-height:1.9;
+font-size:13px;margin-bottom:35px}
+.hero-actions{display:flex;gap:15px;flex-wrap:wrap}
+.outline-btn{padding:14px 24px;border:1px solid #ffffff66;
+font-size:10px;letter-spacing:2px;transition:.3s}
+.outline-btn:hover{border-color:var(--purple);color:var(--purple)}
+.hero-bottom{position:absolute;bottom:35px;left:10%;right:10%;
+display:flex;justify-content:space-between;color:#c4b8bd;
+font-size:9px;letter-spacing:3px}
+.scroll-line{height:1px;width:65px;background:var(--gold);
+display:inline-block;vertical-align:middle;margin-right:10px}
+section{padding:115px 9%}
+.section-top{text-align:center;margin-bottom:55px}
+.section-top .eyebrow{margin-bottom:14px}
+.section-top h2{font:500 clamp(40px,6vw,68px)/1.05 'Cormorant Garamond',serif}
+.section-top h2 em{color:var(--gold)}
+.section-top p{color:var(--muted);font-size:12px;margin-top:16px;line-height:1.8}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.about-img{height:590px;position:relative}
+.about-img img{height:100%}
+.about-img:after{content:"";position:absolute;inset:18px -18px -18px 18px;
+border:1px solid var(--gold);z-index:-1}
+.about-copy h2{font:500 clamp(42px,5vw,65px)/1.05 'Cormorant Garamond',serif;
+margin:20px 0}
+.about-copy h2 em{color:var(--gold)}
+.about-copy p{font-size:13px;color:var(--muted);line-height:2;margin-bottom:25px}
+.signature{font:italic 32px 'Cormorant Garamond',serif;color:var(--gold)}
+.stats{display:flex;gap:35px;margin-top:35px;border-top:1px solid #ffffff20;padding-top:25px}
+.stats strong{display:block;color:var(--gold);font:38px 'Cormorant Garamond',serif}
+.stats small{font-size:9px;letter-spacing:1.5px;color:var(--muted)}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.work-card{position:relative;height:410px;overflow:hidden;cursor:pointer}
+.work-card img{height:100%;transition:transform .8s}
+.work-card:hover img{transform:scale(1.1)}
+.work-card:after{content:"";position:absolute;inset:0;
+background:linear-gradient(0deg,rgba(0,0,0,.85),transparent 65%)}
+.work-info{position:absolute;z-index:2;bottom:25px;left:25px}
+.work-info span{font-size:9px;letter-spacing:3px;color:var(--gold)}
+.work-info h3{font:35px 'Cormorant Garamond',serif;margin-top:7px}
+.wide-card{grid-column:span 2}
+.drone{
+background:linear-gradient(90deg,rgba(8,7,12,.94),rgba(8,7,12,.3)),
+url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1800&q=85') center/cover;
+min-height:480px;display:flex;align-items:center
+}
+.drone-content{max-width:580px}
+.drone h2{font:55px 'Cormorant Garamond',serif;margin:15px 0}
+.drone h2 em{color:var(--gold)}
+.drone p{font-size:13px;line-height:2;color:#ddd;margin-bottom:25px}
+.film-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.film-card{height:360px;position:relative;overflow:hidden}
+.film-card img{height:100%;transition:.8s}
+.film-card:hover img{transform:scale(1.08)}
+.film-card:after{content:"";position:absolute;inset:0;
+background:linear-gradient(0deg,#08070c,transparent 70%)}
+.film-card div{position:absolute;bottom:25px;left:25px;z-index:2}
+.film-card h3{font:36px 'Cormorant Garamond',serif}
+.film-card p{font-size:10px;color:var(--gold);letter-spacing:2px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.team-card img{height:350px;filter:grayscale(35%);transition:.5s}
+.team-card:hover img{filter:grayscale(0);transform:translateY(-6px)}
+.team-card h3{font:28px 'Cormorant Garamond',serif;margin-top:18px}
+.team-card p{font-size:10px;letter-spacing:2px;color:var(--gold);margin-top:7px}
+.contact{
+background:radial-gradient(ellipse at 50% 100%,#35264455,transparent 65%),#0d0a10;
+text-align:center
+}
+.contact h2{font:500 clamp(45px,7vw,80px)/1 'Cormorant Garamond',serif;
+margin:20px 0}
+.contact h2 em{color:var(--gold)}
+.contact>p{color:var(--muted);font-size:13px;line-height:2;max-width:540px;margin:0 auto 35px}
+.contact-links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.contact-form{max-width:620px;margin:55px auto 0;text-align:left;
+display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.contact-form input,.contact-form select,.contact-form textarea{
+width:100%;padding:16px;background:#ffffff08;border:1px solid #ffffff25;
+color:white;outline:none;font-size:12px
+}
+.contact-form input:focus,.contact-form select:focus,
+.contact-form textarea:focus{border-color:var(--gold)}
+.contact-form select option{background:#151019}
+.contact-form textarea{grid-column:span 2;min-height:110px;resize:vertical}
+.contact-form button{grid-column:span 2;cursor:pointer}
+footer{padding:50px 9%;border-top:1px solid #ffffff18;
+display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}
+footer p{font-size:10px;color:var(--muted);line-height:2}
+.footer-links{display:flex;gap:20px;font-size:11px;color:var(--gold)}
+.reveal{opacity:0;transform:translateY(35px);transition:1s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.floating{
+position:fixed;bottom:22px;right:22px;z-index:99;
+width:52px;height:52px;border-radius:50%;background:var(--gold);
+color:#08070c;display:grid;place-items:center;font-size:22px;
+box-shadow:0 0 25px #d6b47755;transition:.3s
+}
+.floating:hover{transform:scale(1.1)}
+@media(max-width:800px){
+header{padding:0 5%;height:72px}
+.menu{display:block}
+nav{display:none;position:absolute;top:72px;left:0;width:100%;
+background:#0d0b11;padding:25px;flex-direction:column;gap:25px}
+nav.open{display:flex}
+.hero{padding:120px 7% 90px;min-height:90vh}
+.hero-bottom{left:7%;right:7%}
+section{padding:85px 6%}
+.about{grid-template-columns:1fr;gap:45px}
+.about-img{height:430px;margin-right:15px}
+.work-grid{grid-template-columns:1fr 1fr}
+.work-card{height:300px}
+.wide-card{grid-column:span 2}
+.team-grid{grid-template-columns:1fr 1fr}
+.team-card img{height:270px}
+.drone{min-height:420px}
+}
+@media(max-width:480px){
+.hero h1{font-size:65px}
+.work-grid,.film-grid{grid-template-columns:1fr}
+.work-card,.wide-card{grid-column:auto;height:390px}
+.team-grid{grid-template-columns:1fr 1fr;gap:15px}
+.team-card img{height:220px}
+.team-card h3{font-size:23px}
+.stats{gap:20px}
+.contact-form{grid-template-columns:1fr}
+.contact-form textarea,.contact-form button{grid-column:auto}
+.hero-bottom{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow"></div>
+
+<header>
+<a href="#home" class="logo">MUKESH<span>PHOTOGRAPHY</span></a>
+<button class="menu" id="menuBtn" aria-label="Open navigation">☰</button>
+<nav id="nav">
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#work">PORTFOLIO</a>
+<a href="#drone">DRONE</a>
+<a href="#team">OUR TEAM</a>
+<a href="#contact" class="nav-btn">LET'S TALK</a>
+</nav>
+</header>
+
+<main>
+<div class="hero" id="home">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="eyebrow">THE ART OF STORYTELLING</div>
+<h1>Every Frame.<br><em>A Forever Story.</em></h1>
+<p>We don't just capture photographs. We preserve emotions, celebrate love and turn your most beautiful moments into timeless memories.</p>
+<div class="hero-actions">
+<a href="#work" class="gold-btn">EXPLORE OUR WORK ↗</a>
+<a href="#contact" class="outline-btn">BOOK YOUR DATE</a>
+</div>
+</div>
+<div class="hero-bottom">
+<span><i class="scroll-line"></i>SCROLL TO DISCOVER</span>
+<span>BASED IN INDIA · AVAILABLE EVERYWHERE</span>
+</div>
+</div>
+
+<section id="about">
+<div class="about reveal">
+<div class="about-img">
+<img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1000&q=85" alt="Wedding photography">
+</div>
+<div class="about-copy">
+<div class="eyebrow">BEHIND THE LENS</div>
+<h2>Moments fade.<br><em>Memories stay.</em></h2>
+<p>At Mukesh Photography, every celebration has a story worth remembering. From intimate emotions to grand celebrations, our vision is to capture every detail with creativity, passion and an artistic eye.</p>
+<p>We bring together photography, cinematic filmmaking and creative storytelling to make your special day unforgettable.</p>
+<div class="signature">Mukesh Photography</div>
+<div class="stats">
+<div><strong>100%</strong><small>PASSION</small></div>
+<div><strong>4K</strong><small>CINEMATIC VISION</small></div>
+<div><strong>INDIA</strong><small>OUR CANVAS</small></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="work">
+<div class="section-top reveal">
+<div class="eyebrow">A CURATED COLLECTION</div>
+<h2>Stories Worth <em>Keeping.</em></h2>
+<p>Every photograph is a moment. Every moment is a masterpiece.</p>
+</div>
+<div class="work-grid">
+<div class="work-card wide-card reveal">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85" alt="Wedding">
+<div class="work-info"><span>01 / CELEBRATIONS</span><h3>Wedding Stories</h3></div>
+</div>
+<div class="work-card reveal">
+<img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=900&q=85" alt="Wedding couple">
+<div class="work-info"><span>02 / LOVE</span><h3>Pre-Wedding</h3></div>
+</div>
+<div class="work-card reveal">
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85" alt="Wedding details">
+<div class="work-info"><span>03 / DETAILS</span><h3>Wedding Moments</h3></div>
+</div>
+<div class="work-card wide-card reveal">
+<img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=85" alt="Wedding celebration">
+<div class="work-info"><span>04 / GRAND EVENTS</span><h3>Celebrations & Events</h3></div>
+</div>
+</div>
+</section>
+
+<section class="drone" id="drone">
+<div class="drone-content reveal">
+<div class="eyebrow">A DIFFERENT PERSPECTIVE</div>
+<h2>See Your Story<br>From <em>Above.</em></h2>
+<p>Discover breathtaking aerial perspectives and cinematic drone visuals that make every celebration look extraordinary.</p>
+<a href="#contact" class="gold-btn">ENQUIRE FOR DRONE FILMS ↗</a>
+</div>
+</section>
+
+<section id="films">
+<div class="section-top reveal">
+<div class="eyebrow">BEYOND PHOTOGRAPHY</div>
+<h2>Made to <em>Move You.</em></h2>
+<p>Creative films and beautiful visual storytelling.</p>
+</div>
+<div class="film-grid">
+<div class="film-card reveal">
+<img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1000&q=85" alt="Cinematic camera">
+<div><p>VISUAL STORYTELLING</p><h3>Cinematic Films</h3></div>
+</div>
+<div class="film-card reveal">
+<img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=85" alt="Event photography">
+<div><p>THE ART OF CELEBRATION</p><h3>Event Films</h3></div>
+</div>
+</div>
+</section>
+
+<section id="team">
+<div class="section-top reveal">
+<div class="eyebrow">THE CREATIVE MINDS</div>
+<h2>People Behind <em>The Magic.</em></h2>
+<p>A creative team bringing your stories to life.</p>
+</div>
+<div class="team-grid">
+<div class="team-card reveal">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85" alt="Photographer">
+<h3>Lead Photographer</h3><p>PHOTOGRAPHY & VISION</p>
+</div>
+<div class="team-card reveal">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=85" alt="Cinematographer">
+<h3>Cinematographer</h3><p>CINEMATIC FILMS</p>
+</div>
+<div class="team-card reveal">
+<img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=700&q=85" alt="Creative team">
+<h3>Creative Team</h3><p>EDITING & STORYTELLING</p>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="reveal">
+<div class="eyebrow">LET'S CREATE SOMETHING BEAUTIFUL</div>
+<h2>Your Story.<br><em>Our Perspective.</em></h2>
+<p>Planning a wedding, celebration or special event? Tell us a little about your vision. We would love to hear from you. Available across India.</p>
+<div class="contact-links">
+<a class="gold-btn" href="tel:+919794644627">☎ CALL MUKESH</a>
+<a class="outline-btn" href="https://www.instagram.com/mukesh_photography_979?cnvx=MXRmbmcxcDE0NGtzdw==" target="_blank" rel="noopener">◎ INSTAGRAM ↗</a>
+</div>
+</div>
+<form class="contact-form reveal" id="enquiryForm">
+<input name="name" placeholder="Your Name" required>
+<input name="phone" placeholder="Your Mobile Number" type="tel" required>
+<input name="city" placeholder="Your City" required>
+<select name="service" required>
+<option value="">Select Photography Service</option>
+<option>Wedding Photography</option>
+<option>Pre-Wedding Photography</option>
+<option>Drone Photography</option>
+<option>Cinematic Films</option>
+<option>Birthday / Events</option>
+<option>Other</option>
+</select>
+<textarea name="message" placeholder="Tell us about your event (optional)"></textarea>
+<button class="gold-btn" type="submit">SEND ENQUIRY VIA WHATSAPP ↗</button>
+</form>
+</section>
+</main>
+
+<footer>
+<div>
+<a href="#home" class="logo">MUKESH<span>PHOTOGRAPHY</span></a>
+<p>Capturing Moments. Creating Memories.<br>Available across India.</p>
+</div>
+<div class="footer-links">
+<a href="tel:+919794644627">CALL</a>
+<a href="https://www.instagram.com/mukesh_photography_979?cnvx=MXRmbmcxcDE0NGtzdw==" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+</div>
+<p>© <span id="year"></span> Mukesh Photography. All Rights Reserved.</p>
+</footer>
+
+<a class="floating" href="https://wa.me/919794644627" aria-label="WhatsApp Mukesh">✆</a>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>{
+nav.classList.toggle('open');
+menuBtn.textContent=nav.classList.contains('open')?'×':'☰';
+});
+nav.querySelectorAll('a').forEach(link=>{
+link.addEventListener('click',()=>{
+nav.classList.remove('open');
+menuBtn.textContent='☰';
+});
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document.getElementById('enquiryForm').addEventListener('submit',function(e){
+e.preventDefault();
+const f=new FormData(this);
+const message=
+"Hello Mukesh Photography! I want to enquire about a photography service.%0A"+
+"Name: "+encodeURIComponent(f.get('name'))+"%0A"+
+"Mobile: "+encodeURIComponent(f.get('phone'))+"%0A"+
+"City: "+encodeURIComponent(f.get('city'))+"%0A"+
+"Service: "+encodeURIComponent(f.get('service'))+"%0A"+
+"Details: "+encodeURIComponent(f.get('message')||"Not provided");
+window.open("https://wa.me/919794644627?text="+message,"_blank");
+});
+</script>
+</body>
+</html>
+
