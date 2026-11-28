@@ -380,18 +380,18 @@ header {
 
 <header>
   <nav class="navbar wrap">
-    <a class="nav-brand" href="#home">MP.</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">MENU</button>
-    <div class="navlinks" id="navLinks">
-      <a href="#home">HOME</a>
-      <a href="#about">ABOUT</a>
-      <a href="#services">SERVICES</a>
-      <a href="#gallery">GALLERY</a>
-      <a href="#videos">VIDEOS</a>
-      <a href="#team">TEAM</a>
-      <a href="#contact">CONTACT</a>
-    </div>
-  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">MENU ☰</button>
+  <div class="navlinks" id="navLinks">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#services">SERVICES</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#videos">VIDEOS</a>
+    <a href="#team">TEAM</a>
+    <a href="#contact">CONTACT</a>
+    <a class="btn" href="#contact">BOOK NOW</a>
+  </div>
+</nav>
 </header>
 
 <main>
@@ -1329,25 +1329,34 @@ header {
 <!-- MOBILE MENU & YEAR -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const menuButton = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav-links");
+  const menuButton = document.getElementById("menuBtn");
+  const nav = document.getElementById("navLinks");
 
   if (menuButton && nav) {
     menuButton.addEventListener("click", function () {
-      nav.classList.toggle("active");
+      nav.classList.toggle("nav-open");
       menuButton.setAttribute(
         "aria-expanded",
-        nav.classList.contains("active") ? "true" : "false"
+        nav.classList.contains("nav-open") ? "true" : "false"
       );
     });
 
     nav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        nav.classList.remove("active");
+        nav.classList.remove("nav-open");
         menuButton.setAttribute("aria-expanded", "false");
       });
     });
   }
+
+  document.querySelectorAll("img").forEach(function (img) {
+    img.addEventListener("error", function () {
+      if (!img.dataset.fallback) {
+        img.dataset.fallback = "yes";
+        img.src = "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80";
+      }
+    });
+  });
 
   const year = document.getElementById("current-year");
   if (year) year.textContent = new Date().getFullYear();
